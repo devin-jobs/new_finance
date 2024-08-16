@@ -1,0 +1,36 @@
+# PyCharm specific files
+.idea/
+
+# Python specific files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.venv/
+env/
+.env
+
+# Data and configuration files
+*.db
+*.sqlite3
+config.ini
+.env
+.secret
+
+# Other
+*.log
+*.tmp
+
+# Node.js related
+node_modules/
+frontend/node_modules/
+npm-debug.log*
+yarn-error.log
+yarn.lock
+
+# Vue.js related
+dist/
+public/build/
