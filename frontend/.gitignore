@@ -17,7 +17,6 @@ env/
 *.db
 *.sqlite3
 config.ini
-.env
 .secret
 
 # Other
@@ -34,3 +33,14 @@ yarn.lock
 # Vue.js related
 dist/
 public/build/
+
+
+# Ignore frontend configuration and resource files
+frontend/.babelrc
+frontend/babel.config.js
+frontend/jsconfig.json
+frontend/package-lock.json
+frontend/public/favicon.ico
+frontend/src/components/HelloWorld.vue
+frontend/src/assets/logo.png
+frontend/vue.config.js
