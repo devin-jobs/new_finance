@@ -14,7 +14,7 @@ users = {
     }
 }
 
-@app.route('/', methods=['POST'])# 定义一个路由，处理POST请求，路径为'/'
+@app.route('/login', methods=['POST'])# 定义一个路由，处理POST请求，路径为'/'
 def login(): # 定义登录视图函
     data = request.get_json()   # 从POST请求的body中解析JSON数据
     username = data.get('username') # 从JSON数据中获取'username'键对应的值

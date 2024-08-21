@@ -16,25 +16,28 @@
 
 
 <script>
-import { ref, onMounted } from 'vue';
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 import axios from 'axios';
+
 
 export default {
   setup() {
     const username = ref('');
     const password = ref('');
     const message = ref('');
+    const router = useRouter(); // 获取路由器实例
 
     function submitForm() {
       axios
-        .post('http://localhost:5000/', {
+        .post('http://localhost:5000/login', {
           username: username.value,
           password: password.value
         })
         .then(response => {
           if (response.status === 200 && response.data.token) {
             localStorage.setItem('sessionToken', response.data.token);
-            window.location.href = '/main';
+             router.push('/main'); // 使用路由器实例进行页面跳转
           } else {
             message.value = 'Invalid credentials';
           }
@@ -46,12 +49,6 @@ export default {
         });
     }
 
-    onMounted(() => {
-      const sessionToken = localStorage.getItem('sessionToken');
-      if (sessionToken) {
-        window.location.href = '/main';
-      }
-    });
 
     return {
       username,
